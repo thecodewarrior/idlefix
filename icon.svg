@@ -1,0 +1,27 @@
+<svg viewBox="-500 -500 1000 1000" width="1024" height="1024" xmlns="http://www.w3.org/2000/svg" background="white">
+    <path fill="red" d="M 0,0 L 0,-400 A 400,400 0 0,1 200,-346.410161514 Z"/>
+    <path fill="none" stroke="black" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" d="M 0,-200 L 0,-400 A 400,400 0 1,1 -282.842712472,-282.842712472"/>
+    <!-- Tick marks
+    <path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="M 0,-300 L 0,-400" transform="rotate(30)"/>
+    <path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="M 0,-300 L 0,-400" transform="rotate(60)"/>
+    <path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="M 0,-300 L 0,-400" transform="rotate(90)"/>
+    <path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="M 0,-300 L 0,-400" transform="rotate(120)"/>
+    <path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="M 0,-300 L 0,-400" transform="rotate(150)"/>
+    <path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="M 0,-300 L 0,-400" transform="rotate(180)"/>
+    <path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="M 0,-300 L 0,-400" transform="rotate(210)"/>
+    <path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="M 0,-300 L 0,-400" transform="rotate(240)"/>
+    <path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="M 0,-300 L 0,-400" transform="rotate(270)"/>
+    <path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="M 0,-300 L 0,-400" transform="rotate(300)"/>
+    <path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="M 0,-300 L 0,-400" transform="rotate(330)"/>
+    -->
+    <g transform="rotate(30)">
+        <!-- 
+             given a unit circle and a height `h`, the tangent point is (`1/h`, `sqrt(1-1/h^2)`) (parallel to h, perpendicular to h)
+
+             with radius = 50 and height = 275, h = 5.5
+             with h = 5.5, the tangent position is (0.181818182, 0.983332166)
+             scaled back up with radius = 50, the tangent position is (9.0909091,49.1666083)
+         -->
+        <path fill="black" stroke="black" stroke-width="30" stroke-linejoin="miter" stroke-miterlimit="10" d="M 0,-275 L 49.1666083,9.0909091 A 50,50 0 1,1 -49.1666083,9.0909091 Z"/>
+    </g>
+</svg>

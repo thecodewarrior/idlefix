@@ -1,11 +1,14 @@
 {
   "required": true,
-  "package": "net.fabricmc.example.mixin",
+  "package": "dev.thecodewarrior.idlefix.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
   "client": [
-    "ExampleMixin"
+    "IKeyBinding",
+    "MixinInputUtil",
+    "MixinKeyBinding",
+    "MixinMinecraftClient"
   ],
   "injectors": {
     "defaultRequire": 1
