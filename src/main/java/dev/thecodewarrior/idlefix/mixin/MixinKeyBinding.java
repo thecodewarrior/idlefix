@@ -24,10 +24,14 @@ public class MixinKeyBinding implements KeyBindingExtension {
     }
 
     @Override
-    public void resetState() {
+    public void clearSaved() {
         this.savedPressed = false;
-        this.pressed = false;
         this.savedTimesPressed = 0;
+    }
+
+    @Override
+    public void resetState() {
+        this.pressed = false;
         this.timesPressed = 0;
     }
 
