@@ -16,8 +16,10 @@ object IdlefixMod: ClientModInitializer {
     lateinit var key: FabricKeyBinding
         private set
 
+    @JvmStatic
     var timing: Timing = TapAndHoldTiming(true, 0)
     val keyBinds = IKeyBinding.getKeysById()
+    @JvmStatic
     val enabledKeyBinds = mutableMapOf<String, KeyBinding>()
 
     override fun onInitializeClient() {

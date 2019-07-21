@@ -6,6 +6,7 @@
   ],
   "client": [
     "IKeyBinding",
+    "MixinInGameHud",
     "MixinKeyBinding",
     "MixinMinecraftClient"
   ],
