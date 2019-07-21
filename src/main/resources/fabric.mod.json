@@ -18,6 +18,12 @@
 
   "environment": "*",
   "entrypoints": {
+    "cotton-client-commands": [
+      {
+        "adapter": "kotlin",
+        "value": "dev.thecodewarrior.idlefix.IdlefixCommands"
+      }
+    ],
     "client": [
       {
         "adapter": "kotlin",
@@ -32,7 +38,8 @@
   "depends": {
     "fabricloader": ">=0.4.0",
     "fabric": "*",
-    "fabric-language-kotlin": "1.3.40"
+    "fabric-language-kotlin": "1.3.40",
+    "cotton-client-commands": ">=0.4.2"
   },
   "suggests": {
   }

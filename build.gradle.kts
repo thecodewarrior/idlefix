@@ -28,6 +28,7 @@ repositories {
     jcenter()
     mavenCentral()
     maven(url = "https://jitpack.io")
+    maven(url = "http://server.bbkr.space:8081/artifactory/libs-snapshot")
 }
 
 group = maven_group
@@ -46,6 +47,7 @@ dependencies {
 
     modCompile("io.github.prospector.modmenu:ModMenu:1.6.2-92")
     modCompile("net.fabricmc:fabric-language-kotlin:1.3.40+build.1")
+    modCompile("io.github.cottonmc:cotton-client-commands:0.4.2+1.14.3-SNAPSHOT")
 }
 
 tasks.withType<KotlinCompile> {

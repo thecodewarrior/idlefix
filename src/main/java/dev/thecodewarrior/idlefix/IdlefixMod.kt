@@ -1,6 +1,7 @@
 package dev.thecodewarrior.idlefix
 
 import dev.thecodewarrior.idlefix.mixin.IKeyBinding
+import dev.thecodewarrior.idlefix.timing.TapAndHoldTiming
 import dev.thecodewarrior.idlefix.timing.Timing
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.keybinding.FabricKeyBinding
@@ -15,10 +16,7 @@ object IdlefixMod: ClientModInitializer {
     lateinit var key: FabricKeyBinding
         private set
 
-    var timing: Timing = object: Timing() {
-        override fun isPressed() = true
-        override fun wasPressed() = true
-    }
+    var timing: Timing = TapAndHoldTiming(true, 0)
     val keyBinds = IKeyBinding.getKeysById()
     val enabledKeyBinds = mutableMapOf<String, KeyBinding>()
 
