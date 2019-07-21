@@ -18,11 +18,6 @@ object IdlefixCommands: ClientCommandPlugin {
         dispatcher.root.addChild(
             literal("idlefix") {
                 +"help" {
-                    +"hold" {
-                        execute {
-                            source.sendFeedback(TranslatableText("commands.idlefix.help.hold"))
-                        }
-                    }
                     +"simple" {
                         execute {
                             source.sendFeedback(TranslatableText("commands.idlefix.help.simple"))
@@ -36,12 +31,6 @@ object IdlefixCommands: ClientCommandPlugin {
                 }
 
                 +"set" {
-                    +"hold" {
-                        execute {
-                            IdlefixMod.timing = TapAndHoldTiming(true, 0)
-                        }
-                    }
-
                     +"simple" {
                         +"tapInterval".float(0f, Float.MAX_VALUE) { interval ->
                             +"hold".boolean { hold ->
@@ -58,12 +47,17 @@ object IdlefixCommands: ClientCommandPlugin {
                     +"cycle" {
                         +"onInterval".float(0f, Float.MAX_VALUE) { onInterval ->
                             +"offInterval".float(0f, Float.MAX_VALUE) { offInterval ->
+                                +"tapInterval".float(0f, Float.MAX_VALUE) { tapInterval ->
+                                    execute {
+                                        IdlefixMod.timing = CycleTiming((onInterval() * 20).toInt(), (offInterval() * 20).toInt(), (tapInterval() * 20).toInt())
+                                    }
+                                }
                                 execute {
-                                    IdlefixMod.timing = CycleTiming((onInterval() * 20).toInt(), (offInterval() * 20).toInt())
+                                    IdlefixMod.timing = CycleTiming((onInterval() * 20).toInt(), (offInterval() * 20).toInt(), Int.MAX_VALUE)
                                 }
                             }
                             execute {
-                                IdlefixMod.timing = CycleTiming((onInterval() * 20).toInt(), (onInterval() * 20).toInt())
+                                IdlefixMod.timing = CycleTiming((onInterval() * 20).toInt(), (onInterval() * 20).toInt(), Int.MAX_VALUE)
                             }
                         }
                     }

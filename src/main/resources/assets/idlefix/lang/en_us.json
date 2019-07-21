@@ -1,6 +1,5 @@
 {
   "key.idlefix.toggle": "Lock/Unlock Keys",
-  "commands.idlefix.help.hold": "Hold down the keys and tap them every frame",
-  "commands.idlefix.help.simple": "Tap the keys every <tapInterval> seconds and optionally hold them down in between",
-  "commands.idlefix.help.cycle": "Tap and hold the keys for <onInterval> seconds, then release them for <offInterval> seconds, then repeat."
+  "commands.idlefix.help.simple": "Tap the keys every <tapInterval> seconds, optionally holding them down in between.",
+  "commands.idlefix.help.cycle": "Hold down the keys for <onInterval> seconds, tapping every <tapInterval> seconds (default is only when initially pressing), then release them for <offInterval> seconds."
 }

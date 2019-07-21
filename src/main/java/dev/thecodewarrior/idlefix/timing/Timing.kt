@@ -25,15 +25,17 @@ class TapAndHoldTiming(private val hold: Boolean, private val interval: Int): Ti
     override fun wasPressed(): Boolean = interval == 0 || time % interval == 0
 }
 
-class CycleTiming(private val onInterval: Int, private val offInterval: Int): Timing() {
+class CycleTiming(private val onInterval: Int, private val offInterval: Int, private val tapInterval: Int): Timing() {
     init {
         if(onInterval <= 0)
             throw IllegalArgumentException("onInterval $onInterval must be positive")
         if(offInterval <= 0)
             throw IllegalArgumentException("offInterval $offInterval must be positive")
+        if(tapInterval < 0)
+            throw IllegalArgumentException("tapInterval $tapInterval must not be negative")
     }
 
     override fun isPressed(): Boolean = time % (onInterval + offInterval) < onInterval
-    override fun wasPressed(): Boolean = time % (onInterval + offInterval) == 0
+    override fun wasPressed(): Boolean = isPressed() && (tapInterval == 0 || time % (onInterval + offInterval) % tapInterval == 0)
 }
 

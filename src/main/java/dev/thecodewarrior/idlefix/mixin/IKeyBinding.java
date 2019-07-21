@@ -6,7 +6,6 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Map;
 
@@ -14,7 +13,7 @@ import java.util.Map;
 public interface IKeyBinding {
     @Accessor("keysById")
     static Map<String, KeyBinding> getKeysById() {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException("Mixin failed");
     }
 
     @Accessor("pressed")
